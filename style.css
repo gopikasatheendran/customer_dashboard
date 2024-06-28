@@ -1,0 +1,290 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    height: 100vh;
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    padding: 20px 60px;
+    background-color: #b1aeae;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.hamburger {
+    font-size: 24px;
+    cursor: pointer;
+    margin-right: 20px;
+}
+
+.search-bar {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.search-bar input[type="text"] {
+    padding: 10px;
+    border: 1px solid #b5afaf;
+    border-radius: 5px;
+    width: 100%;
+}
+
+.search-bar .material-icons {
+    position: absolute;
+    right: 10px;
+    cursor: pointer;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.header-right .material-icons {
+    cursor: pointer;
+}
+
+.header-right span {
+    font-weight: bold;
+}
+
+.material-icons {
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+.top {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+    gap: 20px;
+}
+
+.greet {
+    display: flex;
+    flex-direction: column;
+}
+
+.greet h1 {
+    margin: 0;
+}
+
+.contents {
+    display: flex;
+    flex-direction: column;
+    background-color: #e8e3e3;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.actions {
+    display: flex;
+    justify-content: flex-end;
+    text-align: right;
+}
+
+.actions .material-icons {
+    padding-left: 0%;
+}
+
+.action-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2px 100px;
+    background-color: #ffffff;
+    border-radius: 25px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    margin-right: 10px;
+}
+
+.blocks {
+    display: flex;
+    gap: 20px;
+    padding: 20px 0;
+    flex-wrap: wrap;
+}
+
+.last {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+.order_history
+{
+    
+    height:min-content;
+    
+}
+.product{
+    height:max-content;
+    padding: 20px;
+    background-color: #f9f9f9;
+    flex: 1;
+    padding-block-start: 20px;
+    justify-content: space-around;
+    
+}
+
+.order_history,
+.transaction_history {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    flex: 1;
+    padding-block-start: 20px;
+}
+
+.slider {
+    width: 100%;
+    height: 200px;
+    position: relative;
+    overflow: hidden;
+}
+
+.slider img {
+    width: 50%;
+    height: 100%;
+    top: 0;
+    margin-left: auto;
+    margin-right: auto;
+    transition: left 0.5s ease;
+    align-items: center;
+    size-adjust:initial;
+    justify-content: space-around;
+}
+
+.slider img.active {
+    left: 0;
+}
+
+.slider img.previous {
+    left: -100%;
+}
+
+.navigation-button {
+    text-align: center;
+    position: relative;
+    margin-top: 10px;
+}
+
+.dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.active,
+.dot:hover {
+    background-color: #717171;
+}
+
+.stars {
+    display: inline-block;
+    color: #FFD700;
+    font-size: 24px;
+}
+
+.order-now {
+    display: inline-block;
+    padding: 10px 20px;
+    margin-top: 10px;
+    background-color: blue;
+    color: black;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    align-items: end;
+}
+
+.order-now:hover {
+    background-color: darkblue;
+}
+
+.transaction_history .filter-options {
+    margin-bottom: 10px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table th {
+    background-color: #f0f0f0; /* Light background color for headers */
+    border: none; /* Remove borders */
+    padding: 10px;
+    text-align: left;
+}
+
+table td {
+    border: none; /* Remove borders from table cells */
+    padding: 10px;
+    text-align: left;
+}
+
+.view-details {
+    color: rgb(64, 64, 231);
+    text-decoration: underline;
+    cursor: pointer;
+    text-align: right;
+    font-weight: normal;
+    font-size: small;
+}
+.view-details {
+    color: blue;
+    text-decoration: underline;
+    cursor: pointer;
+    text-align: right;
+    font-weight: normal;
+    font-size: small;
+}
+
+@media (max-width: 768px) {
+    .top {
+        align-items: flex-start;
+    }
+
+    .last {
+        flex-direction: column;
+    }
+
+    .order_history,
+    .product,
+    .transaction_history {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .blocks {
+        flex-direction: column;
+    }
+
+    .action-button {
+        padding: 2px 10px;
+        margin: 5px 0;
+    }
+}

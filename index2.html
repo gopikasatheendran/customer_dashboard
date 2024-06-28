@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Google Icons CDN -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="main">
+        <div class="header">
+            <div class="hamburger" onclick="toggleSidebar()">☰</div>
+            <div class="search-bar">
+                <input type="text" placeholder="Search for services...">
+                <i class="material-icons">search</i>
+            </div>
+            <div class="header-right">
+                <i class="material-icons notification-icon">notifications_active</i>
+                <i class="material-icons">account_circle</i>
+                <span>Ann</span>
+                <i class="material-icons">keyboard_arrow_down</i>
+            </div>
+        </div>
+        <div class="top">
+            <div class="greet">
+                <h1>Welcome back, Ann!</h1>
+                <p>Thank you for choosing ABSerp</p>
+                <div id="date"></div>
+                <div class="actions">
+                    Place Order<i class="material-icons">arrow_forward_ios</i> Service Request<i class="material-icons">arrow_forward_ios</i>
+                </div>
+            </div>
+        </div>
+        <div class="contents">
+            <div class="blocks">
+                <div class="action-button">
+                    <p>Orders</p>
+                </div>
+                <div class="action-button">
+                    <p>Service-History</p>
+                </div>
+                <div class="action-button">
+                    <p>Tracking</p>
+                </div>
+            </div>
+
+            <div class="last">
+                <div class="order_history">
+                    <h2>
+                        Order History
+                        <a href="#" class="view-details">View Details</a>
+                    </h2>
+                    <canvas id="order-history-chart"></canvas>
+                </div>
+                <div class="product">
+                    <h2>Products</h2>
+                    <div class="slider">
+                        <img id="img-1" src="best-split-ac-service-wall-mount.jpg" alt="Product 1" class="active">
+                        <img id="img-2" src="best-split-ac-service-wall-mount.jpg" alt="Product 2">
+                    </div>
+                    <div class="navigation-button">
+                        <span class="dot active" onclick="changeSlide(0)"></span>
+                        <span class="dot" onclick="changeSlide(1)"></span>
+                    </div>
+                    <h5 id="product-desc-1">Bluestar 1.5 Ton 3 Star 5-in-1 Convertible Inverter Split Air Conditioner.Split AC with patented inverter Swing compressor- for high energy efficiency; Dew clean technology to ensure healthy air.</h5>
+                    <div class="stars" id="product-rating-1">
+                        <i class="material-icons">star</i>
+                        <i class="material-icons">star</i>
+                        <i class="material-icons">star</i>
+                        <i class="material-icons">star</i>
+                        <i class="material-icons star-half">star_half</i>
+                    </div>
+                    <button class="order-now">Order Now</button>
+                </div>
+            </div>
+            <div class="transaction_history">
+                <h2>Transaction History</h2>
+                <div class="filter-options">
+                    <label for="filter">Filter:</label>
+                    <select id="filter">
+                        <option value="all">All</option>
+                        <option value="completed">Completed</option>
+                        <option value="pending">Pending</option>
+                    </select>
+                </div>
+                <table id="transaction-table">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Type</th>
+                            <th>Date</th>
+                            <th>Amount</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Table data here -->
+                        <tr data-status="completed">
+                            <td>Samsung Galaxy S21</td>
+                            <td>Order</td>
+                            <td>2024-06-15</td>
+                            <td>$999.00</td>
+                            <td>Completed</td>
+                        </tr>
+                        <tr data-status="pending">
+                            <td>Apple MacBook Pro</td>
+                            <td>Service</td>
+                            <td>2024-06-20</td>
+                            <td>$300.00</td>
+                            <td>Pending</td>
+                        </tr>
+                        <tr data-status="completed">
+                          <td>Sony WH-1000XM4</td>
+                          <td>Order</td>
+                          <td>2024-05-10</td>
+                          <td>$350.00</td>
+                          <td>Completed</td>
+                      </tr>
+                      <tr data-status="completed">
+                          <td>Amazon Echo</td>
+                          <td>Order</td>
+                          <td>2024-04-22</td>
+                          <td>$99.99</td>
+                          <td>Completed</td>
+                      </tr>
+                      
+                      <tr data-status="pending">
+                          <td>Microsoft Surface Laptop 4</td>
+                          <td>Order</td>
+                          <td>2024-03-18</td>
+                          <td>$1,199.00</td>
+                          <td>Completed</td>
+                      </tr>
+                      <tr data-status="completed">
+                          <td>HP Printer</td>
+                          <td>Order</td>
+                          <td>2024-02-05</td>
+                          <td>$250.00</td>
+                          <td>Completed</td>
+                      </tr>
+                    
+                      <tr data-status="completed">
+                          <td>Dell XPS 13</td>
+                          <td>Order</td>
+                          <td>2024-01-15</td>
+                          <td>$999.00</td>
+                          <td>Completed</td>
+                      </tr>
+                      <tr data-status="completed">
+                          <td>Samsung QLED TV</td>
+                          <td>Order</td>
+                          <td>2024-03-25</td>
+                          <td>$1,299.00</td>
+                          <td>Completed</td>
+                      </tr>
+                      <tr data-status="pending">
+                          <td>Logitech MX Master 3</td>
+                          <td>Order</td>
+                          <td>2024-06-27</td>
+                          <td>$99.99</td>
+                          <td>Pending</td>
+                      </tr>
+                      <tr data-status="completed">
+                          <td>JBL Bluetooth Speaker</td>
+                          <td>Order</td>
+                          <td>2024-05-05</td>
+                          <td>$59.99</td>
+                          <td>Completed</td>
+                      </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
